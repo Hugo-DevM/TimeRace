@@ -1,0 +1,31 @@
+.buttonStyle {
+    box-sizing: border-box;
+
+    min-width: 300px;
+    width: 480px;
+    height: 3rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buttonStyle:hover {
+    background-color: #0056b3;
+}
