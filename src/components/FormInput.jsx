@@ -1,30 +1,20 @@
-import { useState } from "react";
-import styles from "../styles/components/FormInput.module.css"
+import styles from "../styles/components/FormInput.module.css";
 
-function FormInput(props) {
-    const [inputType] = useState(props.type);
-    const [inputValue, setInputValue] = useState('');
-
-    function handleChange(event) {
-        const newValue = event.target.value
-        setInputValue(newValue);
-        if (props.onChange) props.onChange(newValue);
-    };
-
+function FormInput({ type, value, onChange, placeholder, autoComplete, title }) {
     return (
         <>
-            <span className={styles.subTitle}>{props?.title ? props.title : ""}</span>
+            {title && <span className={styles.subTitle}>{title}</span>}
             <input
                 className={styles.inputText}
-                type={inputType}
-                value={inputValue}
-                name="input-form"
-                onChange={handleChange}
-                placeholder={props?.placeholder}
-                autoComplete={props?.autocomplete ? props.autocomplete : "off"} />
+                type={type}
+                value={value ?? ""}
+                onChange={(e) => onChange?.(e.target.value)}
+                placeholder={placeholder}
+                autoComplete={autoComplete ?? "off"}
+            />
             <br />
         </>
     );
-};
+}
 
 export default FormInput;
