@@ -1,0 +1,175 @@
+.userLicenseContainer {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-family: "Space Grotesk", sans-serif;
+    margin: 2rem;
+
+}
+
+.userLicenseContainer h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.userLicenseToolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.userLicenseToolbar input {
+    flex: 1;
+    min-width: 240px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.userLicenseFilters {
+    display: flex;
+    gap: 8px;
+}
+
+.filterButton {
+    background: #f2f2f2;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.filterButton:hover {
+    background: #e0e0e0;
+}
+
+.active {
+    background: #007bff;
+    color: #fff;
+}
+
+.active:hover {
+    background: #006ee4;
+    color: #fff;
+}
+
+.userLicenseTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.userLicenseTable th {
+    background: #f8f9fa;
+    color: #555;
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.userLicenseTable td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.userLicenseTable tr:hover {
+    background: #fafafa;
+}
+
+.statusBadge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.statusBadge.active {
+    background: #d4edda;
+    color: #00a326;
+}
+
+.statusBadge.inactive {
+    background: #e2e3e5;
+    color: #6c757d;
+}
+
+.btnAddUser {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnAddUser:hover {
+    background-color: #218838;
+}
+
+.btnAction {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.btnDelete {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: #dc3545;
+}
+
+.activate {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.deactivate {
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.btnAction:hover {
+    opacity: 0.8;
+}
+
+.label {
+    color: #333;
+    font-size: large;
+    padding-bottom: .5rem;
+}
+
+.title {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0 0 1rem;
+}
+
+.subtitle {
+    color: gray;
+    padding: 0 0 1rem;
+}

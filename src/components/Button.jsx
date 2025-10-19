@@ -1,9 +1,6 @@
-import { useState } from "react";
 import styles from "../styles/components/Button.module.css"
 
 function Button(props) {
-    const [size] = useState(props.size);
-    const [variant] = useState(props.variant);
 
     const buttonStyle = {
         backgroundColor: '#007BFF'
