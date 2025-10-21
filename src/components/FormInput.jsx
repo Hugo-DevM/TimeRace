@@ -1,6 +1,6 @@
 import styles from "../styles/components/FormInput.module.css";
 
-function FormInput({ type, value, onChange, placeholder, autoComplete, title }) {
+function FormInput({ type, value, onChange, placeholder, autoComplete, title, readOnly }) {
     return (
         <>
             {title && <span className={styles.subTitle}>{title}</span>}
@@ -11,6 +11,7 @@ function FormInput({ type, value, onChange, placeholder, autoComplete, title }) 
                 onChange={(e) => onChange?.(e.target.value)}
                 placeholder={placeholder}
                 autoComplete={autoComplete ?? "off"}
+                readOnly={readOnly}
             />
             <br />
         </>

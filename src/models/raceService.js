@@ -15,4 +15,14 @@ export const raceService = {
         if (!res.ok) throw new Error("Error al obtener la liga");
         return await res.json();
     },
+
+    async createRace(data, id) {
+        const res = await fetch(`http://localhost:5000/api/races/${id}`, {
+            method: "POST",
+            headers: getAuthHeaders(),
+            body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error("Error al crear la carrera");
+        return await res.json();
+    }
 };

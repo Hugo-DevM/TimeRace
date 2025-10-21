@@ -3,24 +3,20 @@ import { useState, useEffect } from "react";
 import { raceService } from "../models/raceService";
 
 export function useRaceViewModel(id) {
-    const [race, setRace] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+    const [race, setRace] = useState([]);
 
     useEffect(() => {
-        const fetchLeague = async () => {
-            try {
-                const data = await raceService.getLeagueById(id);
-                setRace(data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
+        loadRaces();
+    }, []);
 
-        if (id) fetchLeague();
-    }, [id]);
+    async function loadRaces() {
+        const data = await raceService.getLeagueById(id);
+        setRace(data)
+    }
+    async function addRace(newRace) {
+        await raceService.createRace(newRace, id);
+        await loadRaces();
+    }
 
-    return { race, loading, error };
+    return { race, addRace };
 }
