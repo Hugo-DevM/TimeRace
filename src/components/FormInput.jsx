@@ -1,9 +1,8 @@
 import styles from "../styles/components/FormInput.module.css";
 
-function FormInput({ type, value, onChange, placeholder, autoComplete, title, readOnly }) {
+function FormInput({ type, value, onChange, placeholder, autoComplete, readOnly }) {
     return (
         <>
-            {title && <span className={styles.subTitle}>{title}</span>}
             <input
                 className={styles.inputText}
                 type={type}

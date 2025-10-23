@@ -8,11 +8,20 @@ function getAuthHeaders() {
 
 export const raceService = {
     async getLeagueById(id) {
-        const res = await fetch(`http://localhost:5000/api/races/${id}`, {
+        const res = await fetch(`http://localhost:5000/api/races/league/${id}`, {
             headers: getAuthHeaders(),
         });
 
         if (!res.ok) throw new Error("Error al obtener la liga");
+        return await res.json();
+    },
+
+    async getRaceById(id) {
+        const res = await fetch(`http://localhost:5000/api/races/${id}`, {
+            headers: getAuthHeaders(),
+        });
+
+        if (!res.ok) throw new Error("Error al obtener la carrera");
         return await res.json();
     },
 

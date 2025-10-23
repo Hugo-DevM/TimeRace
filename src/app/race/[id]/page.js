@@ -9,13 +9,14 @@ import Modal from "../../../components/Dialog";
 import Button from "../../../components/Button";
 import FormInput from "../../../components/FormInput";
 import styles from "../../../styles/views/race.module.css"
+import { IconBack } from "../../../styles/Icons/Icons";
 
 
 
 export default function LeagueDetail() {
     const { league } = useLeagueViewModel();
     const { id } = useParams();
-    const { race, addRace } = useRaceViewModel(id);
+    const { races, addRace } = useRaceViewModel(id, "league");
     const [error, setError] = useState("");
     const [isModalShowing, setIsModalShowing] = useState(false);
     const [newRace, setNewRace] = useState({ name: "", race_number: 1, location: "", date: "" })
@@ -32,9 +33,9 @@ export default function LeagueDetail() {
     useEffect(() => {
         setNewRace((prev) => ({
             ...prev,
-            race_number: race.length + 1
+            race_number: races.length + 1
         }));
-    }, [race]);
+    }, [races]);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -70,17 +71,11 @@ export default function LeagueDetail() {
                                 className={styles.btnReturn}
                                 onClick={() => router.back()}
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 640 640"
-                                    width="34"
-                                    height="34"
-                                    fill="currentColor">
-                                    <path fill="#343232" d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z" /></svg>
+                                <IconBack />
                             </button>
                             <h1 className={styles.title}>{nameLeague}</h1>
                         </div>
-                        {race.length >= rangeRaceLeague ? (
+                        {races.length >= rangeRaceLeague ? (
                             <p >Se alcanzó el número máximo de carreras</p>
                         ) : (
                             <button
@@ -92,10 +87,10 @@ export default function LeagueDetail() {
                         )}
                     </div>
                     {error && <p className={styles.error}>{error}</p>}
-                    <div className={`${styles.contentCard} ${race.length === 0 ? styles.empty : ""
+                    <div className={`${styles.contentCard} ${races.length === 0 ? styles.empty : ""
                         }`}>
-                        {race.length > 0 ? (
-                            race.map((r) => (
+                        {races.length > 0 ? (
+                            races.map((r) => (
                                 <article className={styles.sectionLeague} key={r.id}>
                                     <div className={styles.contentTextLeague}>
                                         <h3 className={styles.subtitleLeague}>{r.name}</h3>
